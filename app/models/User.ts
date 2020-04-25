@@ -102,7 +102,7 @@ export default class User extends BaseModel {
     public sanitize(...fields: string[]): User {
         if (isNil(fields) || !isArray(fields)) fields = [];
 
-        fields.push('password', 'token');
+        fields.push('password', 'token', 'lastUsernameUpdateAt');
         const user = { ...this };
 
         // remove all the properties specified in the fields list. Ensuring to also delete the users
